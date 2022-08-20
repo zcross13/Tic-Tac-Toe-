@@ -31,15 +31,17 @@ squares.forEach(element => {
         //Marks box only if box has not been marked
         if (element.textContent === ''){
         element.textContent = player
-        element.classList.add('blue')
+        // element.classList.add('pink')
         console.log(element.classList)
         checkForWinner()
         } else return
         //Switches to next player
         if (player === 'X'){
             player = 'O'
-        }else 
-            player = 'X'
+            element.style.backgroundColor = "pink";
+        }else if (player === 'O'){
+            player = 'X';
+        }
     })
 })
 

@@ -1,5 +1,9 @@
+* {
+    background-color: limegreen; 
+}
+
 h1 {
-    color: red;
+    color: black;
     text-align: center;
 }
 
@@ -17,6 +21,6 @@ h1 {
     vertical-align: center;
 }
 
-.blue{
-    background-color: blue;
+.pink{
+    background-color: pink;
 }
