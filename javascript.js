@@ -1,6 +1,7 @@
 let squares = document.querySelectorAll('.square')
 console.log(squares)
 let player = ''
+
 function checkForWinner(){
     let winCondition =[
         [squares[0],squares[1],squares[2]],
@@ -21,6 +22,10 @@ function checkForWinner(){
     }
 }
 
+// let squares = document.querySelectorAll('.square')
+// console.log(squares)
+// let player = ''
+
 
 squares.forEach(element => {
     element.addEventListener('click', function() {
@@ -31,28 +36,25 @@ squares.forEach(element => {
         //Marks box only if box has not been marked
         if (element.textContent === ''){
         element.textContent = player
-        // element.classList.add('pink')
-        console.log(element.classList)
         checkForWinner()
         } else return
         //Switches to next player
-        if (player === 'X'){
+        if (player === 'X' ){
             player = 'O'
-            element.style.backgroundColor = "pink";
-        }else if (player === 'O'){
-            player = 'X';
-        }
+            element.classList.toggle('red')
+        }else 
+            player = 'X'
+            element.classList.toggle('blue')
     })
 })
 
-
 //X Starts Button
-function xStarts() {
+function playerOne() {
     player = 'X'
     clearBoard()
 }
 //O Starts Button
-function oStarts() {
+function playerTwo() {
     player = 'O'
     clearBoard()
 }
@@ -62,5 +64,7 @@ function oStarts() {
 function clearBoard() {
     squares.forEach(element => {
         element.textContent = ''
+        element.classList.remove('red')
+        element.classList.remove('blue')
     })
 }
